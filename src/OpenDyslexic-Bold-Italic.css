@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'OpenDyslexic';
+  font-weight: 700;
+  font-style: italic;
+  src: url('./BoldItalic/OpenDyslexic-Bold-Italic.woff2') format("woff2"),
+        url('./BoldItalic/OpenDyslexic-Bold-Italic.woff') format('woff');
+}

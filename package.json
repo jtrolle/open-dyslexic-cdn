@@ -1,0 +1,38 @@
+{
+  "name": "open-dyslexic-cdn",
+  "version": "0.0.1",
+  "author": "jtrolle",
+  "description": "Open source font for dyslexics and for high readability.",
+  "homepage": "https://github.com/jtrolle/open-dyslexic-cdn#readme",
+  "main": "dist/open-dyslexic.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf dist",
+    "copy": "cpy src/Bold dist/Bold --flat && cpy src/BoldItalic dist/BoldItalic --flat && cpy src/Italic dist/Italic --flat && cpy src/Regular dist/Regular --flat",
+    "build:css": "postcss src/OpenDyslexic.css -o dist/OpenDyslexic.css && postcss src/OpenDyslexic-Bold-Italic.css -o dist/OpenDyslexic-Bold-Italic.css && postcss src/OpenDyslexic-Bold.css -o dist/OpenDyslexic-Bold.css && postcss src/OpenDyslexic-Italic.css -o dist/OpenDyslexic-Italic.css && postcss src/OpenDyslexic-Regular.css -o dist/OpenDyslexic-Regular.css",
+    "build": "mkdirp dist && npm run clean && npm run copy && npm run build:css",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtrolle/open-dyslexic.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jtrolle/open-dyslexic/issues"
+  },
+  "ignore": [
+    "README.md",
+    "sources*",
+    "screenshots*",
+    "node_modules"
+  ],
+  "devDependencies": {
+    "cpy-cli": "^4.2.0",
+    "mkdirp": "^1.0.4",
+    "postcss": "^8.4.17",
+    "postcss-cli": "^10.0.0",
+    "postcss-import": "^15.0.0",
+    "rimraf": "^3.0.2"
+  }
+}
